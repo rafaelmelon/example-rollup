@@ -1,3 +1,6 @@
+// Load a stylesheet
+import '../styles/main.css';
+
 // Import a couple modules for testing.
 import { sayHelloTo } from './modules/mod1';
 import addArray from './modules/mod2';
@@ -10,6 +13,8 @@ const log = debug('app:log');
 if(ENV !== 'production') {
   debug.enable('*');
   log('Logging is enabled!');
+
+  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 } else {
   debug.disable();
 }
